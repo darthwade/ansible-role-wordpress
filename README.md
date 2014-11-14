@@ -34,7 +34,7 @@ $ git clone https://github.com/darthwade/ansible-role-wordpress.git
 ## Variables
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
-```yaml
+```yaml 
 wp_version: 4.0
 wp_db_name: 'database_name_here'
 wp_db_user: 'username_here'
