@@ -53,11 +53,11 @@ wp_debug: false
   vars:
     wp_version: 4.0
     wp_db_name: 'database_name_here'
-	wp_db_user: 'username_here'
-	wp_db_password: 'password_here'
-	wp_db_host: 'localhost'
+    wp_db_user: 'username_here'
+    wp_db_password: 'password_here'
+    wp_db_host: 'localhost'
   roles:
-    - darthwade.wordpress
+  - darthwade.wordpress
 ```
 
 ## Testing
