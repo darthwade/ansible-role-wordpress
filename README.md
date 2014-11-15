@@ -36,6 +36,7 @@ Here is a list of all the default variables for this role, which are also availa
 
 ```yaml 
 wp_version: 4.0
+wp_install_dir: '/var/sites/awesome_wordpress_site'
 wp_db_name: 'database_name_here'
 wp_db_user: 'username_here'
 wp_db_password: 'password_here'
@@ -52,6 +53,7 @@ wp_debug: false
 - hosts: all
   vars:
     wp_version: 4.0
+    wp_install_dir: '/var/sites/awesome_wordpress_site'
     wp_db_name: 'database_name_here'
     wp_db_user: 'username_here'
     wp_db_password: 'password_here'
