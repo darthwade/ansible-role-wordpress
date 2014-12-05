@@ -24,7 +24,7 @@
   template: src=wp-config.php.j2 dest={{wp_install_dir}}/wp-config.php
 
 - name: Wordpresss | Change ownership of installation directory
-  file: path={{wp_install_dir}} owner=root group=root state=directory recurse=yes
+  file: path={{wp_install_dir}} owner=www-data group=www-data mode=775 state=directory recurse=yes
 
-- name: Wordpresss | Change ownership of uploads directory
-  file: path={{wp_install_dir}}/wp-content/uploads/ owner=www-data group=www-data state=directory recurse=yes
+- name: Wordpresss | Change ownership of wp-content directory
+  file: path={{wp_install_dir}}/wp-content/ owner=www-data group=www-data mode=755 state=directory recurse=yes

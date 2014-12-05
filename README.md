@@ -46,6 +46,9 @@ wp_db_charset: 'utf8'
 wp_db_collate: ''
 wp_table_prefix: 'wp_'
 wp_debug: false
+
+wp_fs_method: 'direct'
+wp_lang: ''
 ```
 
 ## Example playbook
