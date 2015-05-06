@@ -5,12 +5,16 @@
     name={{ wp_db_name }}
     state=present
     login_host={{ wp_db_host }}
+    login_user={{ wp_db_user}}
+    login_password={{ wp_db_password }}
   register: wp_mysql_db_create
 
 - name: Copy saved database to server
   copy: >
     src={{ wp_database_backup }}
     dest=/tmp/{{ wp_site_name }}.sql
+    login_user={{ wp_db_user}}
+    login_password={{ wp_db_password }}
   when: wp_mysql_site_restore_saved_db|bool
 
 - name: Import saved database
@@ -19,6 +23,8 @@
     state=import
     target=/tmp/{{ wp_site_name }}.sql
     login_host={{ wp_db_host }}
+    login_user={{ wp_db_user}}
+    login_password={{ wp_db_password }}
   when: wp_mysql_site_restore_saved_db|bool
 
 - name: Create/assign database user to db and grant permissions
@@ -28,3 +34,5 @@
     priv='{{ wp_db_name }}.*:ALL'
     state=present
     login_host={{ wp_db_host }}
+    login_user={{ wp_db_user}}
+    login_password={{ wp_db_password }}

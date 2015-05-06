@@ -1,8 +1,8 @@
 ---
 
-- name: Wordpresss | Create or Restore Site Database
+- name: Wordpresss | Create or restore site database
   include: mysql.yml
-  when wp_mysql_enable
+  when: wp_mysql_enable
 
 - name: Wordpresss | Ensure that installation directory exists
   file: path={{wp_install_dir|dirname}} state=directory
