@@ -14,3 +14,10 @@ wp_debug: false
 
 wp_fs_method: 'direct'
 wp_lang: ''
+
+wp_mysql_enable: true
+wp_mysql_db_create: true
+wp_mysql_site_restore_saved_db: false
+wp_backup_local_path: "{{ playbook_dir }}/_private/backup"
+wp_database_backup: "{{ wp_backup_local_path }}/{{ wp_site_name }}.sql"
+wp_site_name: "{{ wp_apache_hostname | default('example') }}"
